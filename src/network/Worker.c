@@ -526,7 +526,7 @@ void swWorker_clean(void)
  * worker main loop
  */
 int swWorker_loop(swFactory *factory, int worker_id)
-{
+{//zhp worker 主循环
     swServer *serv = factory->ptr;
 
 #ifndef SW_WORKER_USE_SIGNALFD

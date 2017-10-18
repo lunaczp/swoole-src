@@ -1129,7 +1129,7 @@ int swReactorThread_start(swServer *serv, swReactor *main_reactor_ptr)
  * ReactorThread main Loop
  */
 static int swReactorThread_loop(swThreadParam *param)
-{
+{//zhp reactor 线程入口 main loop
     swServer *serv = SwooleG.serv;
     int ret;
     int reactor_id = param->pti;

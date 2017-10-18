@@ -330,7 +330,7 @@ static int swServer_start_proxy(swServer *serv)
     /**
      * create reactor thread
      */
-    ret = swReactorThread_start(serv, main_reactor);
+    ret = swReactorThread_start(serv, main_reactor);//zhp 产生多个reactor线程
     if (ret < 0)
     {
         swWarn("ReactorThread start failed");
@@ -558,7 +558,7 @@ void swServer_reopen_log_file(swServer *serv)
         swoole_redirect_stdout(SwooleG.log_fd);
     }
 }
-
+//zhp server start entry
 int swServer_start(swServer *serv)
 {
     swFactory *factory = &serv->factory;
