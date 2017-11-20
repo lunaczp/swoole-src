@@ -86,9 +86,11 @@ int swFactory_notify(swFactory *factory, swDataHead *info)
     info->from_fd = conn->from_fd;
     return swWorker_onTask(factory, (swEventData *) info);
 }
-
+/*lux: connection ends here, call onClose if exist, then call swReactorThread_close */
 int swFactory_end(swFactory *factory, int fd)
 {
+	swNotice("lux:swFactory_end,connection closed");
+
     swServer *serv = factory->ptr;
     swSendData _send;
     swDataHead info;

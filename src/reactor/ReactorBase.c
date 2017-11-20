@@ -247,7 +247,7 @@ static void swReactor_onFinish(swReactor *reactor)
     reactor->defer_callback_list = NULL;
     swReactor_onTimeout_and_Finish(reactor);
 }
-
+/*lux 在这里最终关闭连接句柄 close(fd)*/
 int swReactor_close(swReactor *reactor, int fd)
 {
     swConnection *socket = swReactor_get(reactor, fd);
