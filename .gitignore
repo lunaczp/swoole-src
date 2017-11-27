@@ -1,3 +1,4 @@
+*.udb
 /.cproject
 /.idea
 /.project
